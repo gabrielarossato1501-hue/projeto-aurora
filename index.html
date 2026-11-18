@@ -4,117 +4,156 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projeto Aurora · Conversas que ficam</title>
-<meta name="description" content="Projeto Aurora: escuta, acolhimento e conversas para fortalecer a saúde mental das pessoas idosas. Medicina ENIAC, Guarulhos/SP.">
+<meta name="description" content="Projeto Aurora: cartas de conversa para fortalecer vínculos e o bem-estar de pessoas idosas. Medicina ENIAC, Guarulhos/SP.">
 <style>
-:root{--roxo:#4a2650;--roxo2:#6b3f7d;--ouro:#8a6515;--ouro-claro:#c9a24d;--fundo:#fbf9fc;--texto:#24182b;--borda:#cfc2da;--branco:#fff}
+:root{
+  --roxo:#4a2650; --roxo-2:#6b3f7d; --ouro:#8a6515; --ouro-claro:#c9a24d;
+  --fundo:#f7f5f9; --branco:#ffffff; --texto:#24182b; --texto-2:#5b4d63; --borda:#e2d9e8;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:21px;line-height:1.6;background:var(--fundo);color:var(--texto)}
-.pular{position:absolute;left:-9999px;top:8px;background:var(--branco);color:var(--roxo);padding:12px 16px;font-weight:700;z-index:10;border-radius:8px}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:19px;line-height:1.6;background:var(--fundo);color:var(--texto)}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+.pular{position:absolute;left:-9999px;top:8px;background:var(--branco);color:var(--roxo);padding:10px 14px;font-weight:700;border-radius:8px;z-index:10}
 .pular:focus{left:12px}
-:focus-visible{outline:4px solid var(--ouro);outline-offset:3px}
-header{background:var(--roxo);color:var(--branco);padding:28px 20px 24px;text-align:center}
-header .logo{width:150px;height:150px;border-radius:50%;background:#fff;padding:6px;margin:0 auto 12px;display:block}
-header small{display:block;color:#f3e3b0;font-size:17px;letter-spacing:.04em;text-transform:uppercase}
-header h1{margin:6px 0 0;font-size:34px;line-height:1.2}
-nav{display:flex;gap:8px;padding:12px;position:sticky;top:0;background:var(--fundo);z-index:2;border-bottom:2px solid var(--borda)}
-nav button{flex:1;min-height:60px;font-size:19px;border:2px solid var(--roxo);background:var(--branco);color:var(--roxo);border-radius:14px;font-weight:700;cursor:pointer;font-family:inherit}
-nav button[aria-selected="true"]{background:var(--roxo);color:var(--branco)}
-main{padding:22px 20px 40px;max-width:700px;margin:0 auto}
-h2{font-size:26px;color:var(--roxo);margin:0 0 10px}
-.aviso{background:var(--branco);border:2px solid var(--ouro);border-radius:16px;padding:16px 18px;font-size:19px;margin-bottom:18px}
-.card{background:var(--branco);border:2px solid var(--borda);border-radius:20px;padding:28px 22px;margin:8px 0 18px;min-height:230px}
-.pergunta{font-size:29px;font-weight:700;color:var(--roxo);margin:0 0 16px;line-height:1.35}
-.dica{background:#f5eedb;border-left:6px solid var(--ouro-claro);padding:14px 16px;border-radius:10px;font-size:19px;margin:0;color:#3a2a10}
-.btn{display:block;min-height:62px;font-size:21px;font-weight:700;border:none;border-radius:16px;background:var(--roxo);color:var(--branco);padding:0 22px;cursor:pointer;width:100%;margin:10px 0;font-family:inherit}
-.btn:hover{background:var(--roxo2)}
-.btn.sec{background:var(--branco);color:var(--roxo);border:2px solid var(--roxo)}
-.btn:disabled{opacity:.55;cursor:not-allowed}
-label{display:block;font-weight:700;margin:18px 0 6px}
-input,select,textarea{width:100%;font-size:21px;padding:14px;border:2px solid var(--borda);border-radius:12px;font-family:inherit;background:var(--branco);color:var(--texto)}
-textarea{min-height:150px;resize:vertical}
-.check{display:flex;gap:12px;align-items:flex-start;font-weight:400;font-size:19px;margin-top:20px}
-.check input{width:30px;height:30px;flex:none;margin-top:2px}
-.item{background:var(--branco);border-radius:16px;border:1px solid var(--borda);padding:16px 18px;margin:12px 0}
-.item .meta{color:#5a3a6e;font-size:17px}
-.item h3{margin:4px 0 8px;font-size:22px;color:var(--roxo)}
-.item p{margin:0;white-space:pre-wrap}
-.grupo{margin-top:28px}
-.grupo>h2{border-bottom:2px solid var(--ouro-claro);padding-bottom:6px}
-.status{font-size:19px;color:#4a2650;min-height:30px;margin-top:12px}
-.oculto{display:none}
-footer{background:var(--branco);border-top:2px solid var(--borda);padding:24px 20px;text-align:center}
-footer img{width:260px;max-width:80%;height:auto;display:block;margin:0 auto 10px}
-footer p{margin:0;font-size:17px;color:#4a2650}
-.sobre{background:var(--branco);border-radius:16px;padding:18px 20px;border:1px solid var(--borda);margin-bottom:18px}
-.sobre p{margin:0 0 10px}
-.equipe{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
-.equipe figure{margin:0;text-align:center}
-.equipe img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 12%;border-radius:14px;border:2px solid var(--borda);display:block}
-.equipe figcaption{font-size:17px;margin-top:6px;line-height:1.3}
-@media (max-width:480px){body{font-size:20px}.equipe{grid-template-columns:1fr;max-width:260px;margin-left:auto;margin-right:auto}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Topo */
+.topo{background:var(--roxo);color:var(--branco)}
+.topo-inner{max-width:880px;margin:0 auto;padding:28px 22px;display:flex;align-items:center;gap:22px}
+.topo img{width:104px;height:104px;border-radius:50%;background:var(--branco);padding:4px;flex:none}
+.topo small{display:block;color:#e9d9a8;font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.topo h1{margin:4px 0 6px;font-size:32px;line-height:1.2;font-weight:700}
+.topo p{margin:0;color:#e8dcef;font-size:17px}
+
+main{max-width:880px;margin:0 auto;padding:28px 22px 56px}
+section{margin-bottom:44px}
+h2{font-size:24px;color:var(--roxo);margin:0 0 6px;font-weight:700}
+.lead{color:var(--texto-2);margin:0 0 18px;font-size:18px}
+
+/* Como funciona */
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;list-style:none;padding:0;margin:0}
+.passos li{background:var(--branco);border:1px solid var(--borda);border-radius:14px;padding:18px}
+.passos .n{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--roxo);color:var(--branco);font-weight:700;margin-bottom:10px}
+.passos strong{display:block;color:var(--roxo);font-size:18px;margin-bottom:4px}
+.passos span{color:var(--texto-2);font-size:16px}
+
+/* Cartas */
+.cartas{background:var(--branco);border:1px solid var(--borda);border-radius:18px;padding:28px 24px;box-shadow:0 1px 2px rgba(74,38,80,.06)}
+.pergunta{font-size:28px;font-weight:700;color:var(--roxo);line-height:1.35;margin:0 0 16px;min-height:4.2em;display:flex;align-items:center}
+.dica{background:#faf5ea;border-left:4px solid var(--ouro-claro);padding:14px 16px;border-radius:8px;font-size:17px;color:#3a2a10;margin:0}
+.acoes{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.btn{min-height:56px;padding:0 24px;font-size:19px;font-weight:700;border-radius:12px;border:2px solid var(--roxo);background:var(--roxo);color:var(--branco);cursor:pointer;font-family:inherit;flex:1;min-width:200px}
+.btn:hover{background:var(--roxo-2);border-color:var(--roxo-2)}
+.btn-sec{background:var(--branco);color:var(--roxo)}
+.btn-sec:hover{background:#f3eef7}
+.aviso{font-size:16px;color:var(--texto-2);margin:14px 0 0}
+
+/* Sobre */
+.sobre p{margin:0 0 12px;color:var(--texto)}
+.sobre .destaque{font-size:19px;color:var(--roxo);font-weight:600}
+
+/* Equipe */
+.equipe{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+.membro{background:var(--branco);border:1px solid var(--borda);border-radius:14px;overflow:hidden;text-align:center}
+.membro img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 12%}
+.membro div{padding:12px 12px 16px}
+.membro strong{display:block;color:var(--roxo);font-size:18px}
+.membro span{color:var(--texto-2);font-size:15px}
+.orientacao{font-size:16px;color:var(--texto-2);margin-top:14px}
+
+/* Rodapé */
+footer{background:var(--branco);border-top:1px solid var(--borda)}
+.rodape{max-width:880px;margin:0 auto;padding:26px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.rodape img{width:220px;max-width:60%;height:auto}
+.rodape p{margin:0;color:var(--texto-2);font-size:15px;text-align:right}
+
+@media (max-width:720px){
+  .topo-inner{flex-direction:column;text-align:center}
+  .topo img{width:88px;height:88px}
+  .topo h1{font-size:27px}
+  .passos{grid-template-columns:1fr}
+  .equipe{grid-template-columns:1fr;max-width:280px;margin:6px auto 0}
+  .rodape{flex-direction:column;text-align:center}
+  .rodape p{text-align:center}
+  .pergunta{font-size:24px;min-height:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-<header>
-  <img class="logo" src="logo-aurora.png" alt="Logo do Projeto Aurora, Saúde Mental do Idoso: uma figura de idosa e neto dentro de um A com um sol">
-  <small>Projeto de extensão · Medicina ENIAC · Guarulhos/SP</small>
-  <h1>Conversas que ficam</h1>
+<header class="topo">
+  <div class="topo-inner">
+    <img src="logo-aurora.png" alt="Logo do Projeto Aurora, Saúde Mental do Idoso">
+    <div>
+      <small>Projeto de extensão · Medicina ENIAC</small>
+      <h1>Projeto Aurora</h1>
+      <p>Saúde mental da pessoa idosa, com escuta, acolhimento e conversas que fortalecem vínculos.</p>
+    </div>
+  </div>
 </header>
-
-<nav role="tablist" aria-label="Seções da página">
-  <button role="tab" id="t-cartas" aria-controls="cartas" data-tab="cartas" aria-selected="true" tabindex="0">Cartas</button>
-  <button role="tab" id="t-sobre" aria-controls="sobre" data-tab="sobre" aria-selected="false" tabindex="-1">Sobre</button>
-</nav>
 
 <main id="conteudo">
 
-  <section id="cartas" role="tabpanel" aria-labelledby="t-cartas">
-    <div class="aviso">Pode pular qualquer carta. Ninguém é obrigado a responder.</div>
-    <div class="card" aria-live="polite">
-      <p class="pergunta" id="pergunta">Toque em “Sortear carta” para começar.</p>
-      <p class="dica" id="dica"></p>
-    </div>
-    <button class="btn" id="sortear">Sortear carta</button>
-      </section>
+  <section aria-labelledby="titulo-como">
+    <h2 id="titulo-como">Como usar esta página</h2>
+    <p class="lead">Um jeito simples de conversar com quem você ama.</p>
+    <ol class="passos">
+      <li><span class="n">1</span><strong>Sorteie uma carta</strong><span>Toque no botão e leia a pergunta em voz alta.</span></li>
+      <li><span class="n">2</span><strong>Converse com calma</strong><span>Ouça sem corrigir e deixe a história fluir.</span></li>
+      <li><span class="n">3</span><strong>Pule quando quiser</strong><span>Nenhuma pergunta é obrigatória. Escolher outra também vale.</span></li>
+    </ol>
+  </section>
 
-  <section id="sobre" class="oculto" role="tabpanel" aria-labelledby="t-sobre">
-    <div class="sobre">
-      <h2>O que é o Aurora</h2>
-      <p>O Aurora é uma proposta educativa supervisionada. Ela reúne escuta, acolhimento e orientação sobre a rede de apoio.</p>
-      <p>A ideia valoriza os vínculos, a autonomia e o bem-estar das pessoas idosas. O projeto nasceu do convívio com os avós de três estudantes de Medicina.</p>
-    </div>
-    <div class="sobre">
-      <h2>Quem faz o Aurora</h2>
-      <p>Gabriela, Giovanna e Letícia, estudantes de Medicina do Centro de Excelência ENIAC, com orientação do Dr. Helder Ribeiro.</p>
-      <div class="equipe">
-        <figure>
-          <img src="equipe-1.jpg" alt="Foto da estudante Gabriela, integrante da equipe do Projeto Aurora">
-          <figcaption>Gabriela<br>Articulação e logística</figcaption>
-        </figure>
-        <figure>
-          <img src="equipe-2.jpg" alt="Foto da estudante Giovanna, integrante da equipe do Projeto Aurora">
-          <figcaption>Giovanna<br>Materiais e escuta</figcaption>
-        </figure>
-        <figure>
-          <img src="equipe-3.jpg" alt="Foto da estudante Letícia, integrante da equipe do Projeto Aurora">
-          <figcaption>Letícia<br>Indicadores e registros</figcaption>
-        </figure>
+  <section aria-labelledby="titulo-cartas">
+    <h2 id="titulo-cartas">Cartas de conversa</h2>
+    <p class="lead">Perguntas para lembrar, contar e compartilhar.</p>
+    <div class="cartas">
+      <p class="pergunta" id="pergunta" aria-live="polite">Toque em “Sortear carta” para começar.</p>
+      <p class="dica" id="dica" aria-live="polite">Dica para quem pergunta: as cartas funcionam melhor quando a conversa flui sem pressa.</p>
+      <div class="acoes">
+        <button class="btn" id="sortear" type="button">Sortear carta</button>
       </div>
-    </div>
-    <div class="sobre">
-      <h2>Como usar esta página</h2>
-      <p>Na aba <strong>Cartas</strong>, sorteie uma pergunta e conte uma história com quem está perto de você. Pode pular qualquer carta.</p>
+      <p class="aviso">Ninguém é obrigado a responder. A conversa é voluntária.</p>
     </div>
   </section>
+
+  <section class="sobre" aria-labelledby="titulo-sobre">
+    <h2 id="titulo-sobre">Sobre o Aurora</h2>
+    <p class="lead">Uma proposta educativa supervisionada.</p>
+    <p>O Aurora reúne escuta, acolhimento e orientação sobre a rede de apoio. Busca valorizar os vínculos, a autonomia e o bem-estar das pessoas idosas em diferentes contextos de cuidado.</p>
+    <p>O projeto nasceu do convívio das autoras com os próprios avós, e se aproxima das histórias, rotinas e necessidades desse público.</p>
+    <p class="destaque">A escuta é voluntária, sigilosa e feita com linguagem simples.</p>
+  </section>
+
+  <section aria-labelledby="titulo-equipe">
+    <h2 id="titulo-equipe">Equipe</h2>
+    <p class="lead">Estudantes de Medicina do Centro Universitário de Excelência ENIAC.</p>
+    <div class="equipe">
+      <figure class="membro" style="margin:0">
+        <img src="equipe-1.jpg" alt="Foto da estudante Gabriela, integrante da equipe do Projeto Aurora">
+        <div><strong>Gabriela</strong><span>Articulação e logística</span></div>
+      </figure>
+      <figure class="membro" style="margin:0">
+        <img src="equipe-2.jpg" alt="Foto da estudante Giovanna, integrante da equipe do Projeto Aurora">
+        <div><strong>Giovanna</strong><span>Materiais e escuta</span></div>
+      </figure>
+      <figure class="membro" style="margin:0">
+        <img src="equipe-3.jpg" alt="Foto da estudante Letícia, integrante da equipe do Projeto Aurora">
+        <div><strong>Letícia</strong><span>Indicadores e registros</span></div>
+      </figure>
+    </div>
+    <p class="orientacao">Orientação: Dr. Helder Ribeiro.</p>
+  </section>
+
 </main>
 
 <footer>
-  <img src="logo-eniac.png" alt="Logo do Centro Universitário ENIAC, Centro Universitário de Excelência">
-  <p>Projeto Aurora · Grupo 1A · Medicina ENIAC · Guarulhos/SP</p>
+  <div class="rodape">
+    <img src="logo-eniac.png" alt="Logo do Centro Universitário ENIAC, Centro Universitário de Excelência">
+    <p>Projeto Aurora · Grupo 1A<br>Medicina ENIAC · Guarulhos/SP</p>
+  </div>
 </footer>
 
 <script>
@@ -129,47 +168,14 @@ const CARTAS = [
   { p: "Qual foi a primeira coisa que você aprendeu a fazer sozinho?", d: "Pergunte como a pessoa se sentiu na época." }
 ];
 
-const $ = id => document.getElementById(id);
 let atual = -1;
-let db = null, user = null, uid = null;
-
-// Cartas
-function sortear() {
+document.getElementById('sortear').addEventListener('click', () => {
   let i;
   do { i = Math.floor(Math.random() * CARTAS.length); } while (i === atual && CARTAS.length > 1);
   atual = i;
-  $('pergunta').textContent = CARTAS[i].p;
-  $('dica').textContent = 'Dica para quem pergunta: ' + CARTAS[i].d;
-}
-$('sortear').addEventListener('click', sortear);
-
-
-
-// Abas (clique e setas do teclado)
-const ABAS = ['cartas', 'sobre'];
-function mostrarAba(nome) {
-  ABAS.forEach(s => $(s).classList.toggle('oculto', s !== nome));
-  document.querySelectorAll('nav button').forEach(b => {
-    const ativa = b.dataset.tab === nome;
-    b.setAttribute('aria-selected', String(ativa));
-    b.tabIndex = ativa ? 0 : -1;
-  });
-}
-document.querySelectorAll('nav button').forEach((b, idx, todas) => {
-  b.addEventListener('click', () => mostrarAba(b.dataset.tab));
-  b.addEventListener('keydown', e => {
-    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-    const passo = e.key === 'ArrowRight' ? 1 : -1;
-    const prox = todas[(idx + passo + todas.length) % todas.length];
-    prox.focus();
-    mostrarAba(prox.dataset.tab);
-  });
+  document.getElementById('pergunta').textContent = CARTAS[i].p;
+  document.getElementById('dica').textContent = 'Dica para quem pergunta: ' + CARTAS[i].d;
 });
-
-
-
-
-
 </script>
 </body>
 </html>
