@@ -52,6 +52,18 @@ h2{font-size:24px;color:var(--roxo);margin:0 0 6px;font-weight:700}
 .sobre p{margin:0 0 12px;color:var(--texto)}
 .sobre .destaque{font-size:19px;color:var(--roxo);font-weight:600}
 
+/* Para quem é */
+.dois{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.caixa{background:var(--branco);border:1px solid var(--borda);border-radius:14px;padding:18px}
+.caixa strong{display:block;color:var(--roxo);font-size:18px;margin-bottom:6px}
+.caixa p{margin:0;color:var(--texto-2);font-size:16px}
+
+/* Quando encaminhar */
+.encaminhar{background:#faf5ea;border-left:4px solid var(--ouro-claro);border-radius:12px;padding:22px 24px}
+.encaminhar ul{padding-left:20px;margin:0 0 12px}
+.encaminhar li{margin-bottom:6px;color:var(--texto)}
+.encaminhar .aviso{margin:0}
+
 /* Equipe */
 .equipe{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
 .membro{background:var(--branco);border:1px solid var(--borda);border-radius:14px;overflow:hidden;text-align:center}
@@ -74,6 +86,7 @@ footer{background:var(--branco);border-top:1px solid var(--borda)}
   .topo img{width:88px;height:88px}
   .topo h1{font-size:27px}
   .passos{grid-template-columns:1fr}
+  .dois{grid-template-columns:1fr}
   .equipe{grid-template-columns:1fr;max-width:280px;margin:6px auto 0}
   .rodape{flex-direction:column;text-align:center}
   .rodape p{text-align:center}
@@ -98,9 +111,24 @@ footer{background:var(--branco);border-top:1px solid var(--borda)}
 
 <main id="conteudo">
 
+  <section aria-labelledby="titulo-porque">
+    <h2 id="titulo-porque">Por que uma página e não só uma conversa?</h2>
+    <p>Porque, quando você acabou de conhecer alguém, às vezes não sabe por onde começar. A carta é só o começo: a conversa continua com o que a pessoa responder.</p>
+    <p>As perguntas falam de lembranças, gostos e histórias, que costumam ser o que as pessoas mais gostam de contar. O assunto da doença fica de fora, porque no primeiro contato pode parecer um interrogatório.</p>
+    <p class="destaque">A carta não faz a conversa sozinha. Quem faz é a presença de quem escuta.</p>
+  </section>
+
+  <section aria-labelledby="titulo-para-quem">
+    <h2 id="titulo-para-quem">Para quem é</h2>
+    <div class="dois">
+      <article class="caixa"><strong>Estudante na UBS</strong><p>Você vai conversar com um idoso que acabou de conhecer. Use as cartas para começar, ouça mais do que fala e respeite se a pessoa não quiser responder.</p></article>
+      <article class="caixa"><strong>Neto ou familiar</strong><p>Use as cartas para conversar em casa, num café ou no telefone. Pergunte sobre o passado e deixe a pessoa escolher o ritmo.</p></article>
+    </div>
+  </section>
+
   <section aria-labelledby="titulo-como">
     <h2 id="titulo-como">Como usar esta página</h2>
-    <p class="lead">Um jeito simples de conversar com quem você ama.</p>
+    <p class="lead">Um jeito simples de começar uma conversa.</p>
     <ol class="passos">
       <li><span class="n">1</span><strong>Sorteie uma carta</strong><span>Toque no botão e leia a pergunta em voz alta.</span></li>
       <li><span class="n">2</span><strong>Converse com calma</strong><span>Ouça sem corrigir e deixe a história fluir.</span></li>
@@ -121,9 +149,21 @@ footer{background:var(--branco);border-top:1px solid var(--borda)}
     </div>
   </section>
 
+  <section class="encaminhar" aria-labelledby="titulo-encaminhar">
+    <h2 id="titulo-encaminhar">Quando encaminhar</h2>
+    <p class="lead">Converse com a equipe da UBS se a pessoa parecer muito triste, isolada ou confusa, ou se ela falar em não querer mais viver.</p>
+    <ul>
+      <li><strong>UBS:</strong> equipe de saúde e agente comunitário de saúde, que conhece a família.</li>
+      <li><strong>CVV:</strong> apoio emocional 24 horas pelo 188, gratuito.</li>
+      <li><strong>Disque 100:</strong> denúncias de violência contra a pessoa idosa.</li>
+      <li><strong>Emergência:</strong> se houver risco imediato, ligue 192 (SAMU).</li>
+    </ul>
+    <p class="aviso">Este site não substitui atendimento de saúde.</p>
+  </section>
+
   <section class="sobre" aria-labelledby="titulo-sobre">
     <h2 id="titulo-sobre">Sobre o Aurora</h2>
-    <p class="lead">Uma proposta educativa supervisionada.</p>
+    <p class="lead">Conversas simples que ajudam a cuidar da saúde mental de quem envelheceu.</p>
     <p>O Aurora reúne escuta, acolhimento e orientação sobre a rede de apoio. Busca valorizar os vínculos, a autonomia e o bem-estar das pessoas idosas em diferentes contextos de cuidado.</p>
     <p>O foco principal é a Unidade Básica de Saúde (UBS). Durante as visitas, as autoras viram muitos idosos esperando atendimento, e percebeu-se que, às vezes, uma conversa simples já melhora como eles se sentem. O Aurora quer levar essa escuta para dentro da UBS, de forma acolhedora e sem substituir o atendimento de saúde.</p>
     <p>O projeto também nasceu do convívio das autoras com os próprios avós, e se aproxima das histórias, rotinas e necessidades desse público.</p>
