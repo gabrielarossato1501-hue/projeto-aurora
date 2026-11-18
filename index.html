@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projeto Aurora · Conversas que ficam</title>
+<meta name="description" content="Projeto Aurora: escuta, acolhimento e conversas para fortalecer a saúde mental das pessoas idosas. Medicina ENIAC, Guarulhos/SP.">
+<style>
+:root{--roxo:#4a2650;--roxo2:#6b3f7d;--ouro:#8a6515;--ouro-claro:#c9a24d;--fundo:#fbf9fc;--texto:#24182b;--borda:#cfc2da;--branco:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:21px;line-height:1.6;background:var(--fundo);color:var(--texto)}
+.pular{position:absolute;left:-9999px;top:8px;background:var(--branco);color:var(--roxo);padding:12px 16px;font-weight:700;z-index:10;border-radius:8px}
+.pular:focus{left:12px}
+:focus-visible{outline:4px solid var(--ouro);outline-offset:3px}
+header{background:var(--roxo);color:var(--branco);padding:28px 20px 24px;text-align:center}
+header .logo{width:150px;height:150px;border-radius:50%;background:#fff;padding:6px;margin:0 auto 12px;display:block}
+header small{display:block;color:#f3e3b0;font-size:17px;letter-spacing:.04em;text-transform:uppercase}
+header h1{margin:6px 0 0;font-size:34px;line-height:1.2}
+nav{display:flex;gap:8px;padding:12px;position:sticky;top:0;background:var(--fundo);z-index:2;border-bottom:2px solid var(--borda)}
+nav button{flex:1;min-height:60px;font-size:19px;border:2px solid var(--roxo);background:var(--branco);color:var(--roxo);border-radius:14px;font-weight:700;cursor:pointer;font-family:inherit}
+nav button[aria-selected="true"]{background:var(--roxo);color:var(--branco)}
+main{padding:22px 20px 40px;max-width:700px;margin:0 auto}
+h2{font-size:26px;color:var(--roxo);margin:0 0 10px}
+.aviso{background:var(--branco);border:2px solid var(--ouro);border-radius:16px;padding:16px 18px;font-size:19px;margin-bottom:18px}
+.card{background:var(--branco);border:2px solid var(--borda);border-radius:20px;padding:28px 22px;margin:8px 0 18px;min-height:230px}
+.pergunta{font-size:29px;font-weight:700;color:var(--roxo);margin:0 0 16px;line-height:1.35}
+.dica{background:#f5eedb;border-left:6px solid var(--ouro-claro);padding:14px 16px;border-radius:10px;font-size:19px;margin:0;color:#3a2a10}
+.btn{display:block;min-height:62px;font-size:21px;font-weight:700;border:none;border-radius:16px;background:var(--roxo);color:var(--branco);padding:0 22px;cursor:pointer;width:100%;margin:10px 0;font-family:inherit}
+.btn:hover{background:var(--roxo2)}
+.btn.sec{background:var(--branco);color:var(--roxo);border:2px solid var(--roxo)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+label{display:block;font-weight:700;margin:18px 0 6px}
+input,select,textarea{width:100%;font-size:21px;padding:14px;border:2px solid var(--borda);border-radius:12px;font-family:inherit;background:var(--branco);color:var(--texto)}
+textarea{min-height:150px;resize:vertical}
+.check{display:flex;gap:12px;align-items:flex-start;font-weight:400;font-size:19px;margin-top:20px}
+.check input{width:30px;height:30px;flex:none;margin-top:2px}
+.item{background:var(--branco);border-radius:16px;border:1px solid var(--borda);padding:16px 18px;margin:12px 0}
+.item .meta{color:#5a3a6e;font-size:17px}
+.item h3{margin:4px 0 8px;font-size:22px;color:var(--roxo)}
+.item p{margin:0;white-space:pre-wrap}
+.grupo{margin-top:28px}
+.grupo>h2{border-bottom:2px solid var(--ouro-claro);padding-bottom:6px}
+.status{font-size:19px;color:#4a2650;min-height:30px;margin-top:12px}
+.oculto{display:none}
+footer{background:var(--branco);border-top:2px solid var(--borda);padding:24px 20px;text-align:center}
+footer img{width:260px;max-width:80%;height:auto;display:block;margin:0 auto 10px}
+footer p{margin:0;font-size:17px;color:#4a2650}
+.sobre{background:var(--branco);border-radius:16px;padding:18px 20px;border:1px solid var(--borda);margin-bottom:18px}
+.sobre p{margin:0 0 10px}
+.equipe{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.equipe figure{margin:0;text-align:center}
+.equipe img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 12%;border-radius:14px;border:2px solid var(--borda);display:block}
+.equipe figcaption{font-size:17px;margin-top:6px;line-height:1.3}
+@media (max-width:480px){body{font-size:20px}.equipe{grid-template-columns:1fr;max-width:260px;margin-left:auto;margin-right:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header>
+  <img class="logo" src="logo-aurora.png" alt="Logo do Projeto Aurora, Saúde Mental do Idoso: uma figura de idosa e neto dentro de um A com um sol">
+  <small>Projeto de extensão · Medicina ENIAC · Guarulhos/SP</small>
+  <h1>Conversas que ficam</h1>
+</header>
+
+<nav role="tablist" aria-label="Seções da página">
+  <button role="tab" id="t-cartas" aria-controls="cartas" data-tab="cartas" aria-selected="true" tabindex="0">Cartas</button>
+  <button role="tab" id="t-sobre" aria-controls="sobre" data-tab="sobre" aria-selected="false" tabindex="-1">Sobre</button>
+</nav>
+
+<main id="conteudo">
+
+  <section id="cartas" role="tabpanel" aria-labelledby="t-cartas">
+    <div class="aviso">Pode pular qualquer carta. Ninguém é obrigado a responder.</div>
+    <div class="card" aria-live="polite">
+      <p class="pergunta" id="pergunta">Toque em “Sortear carta” para começar.</p>
+      <p class="dica" id="dica"></p>
+    </div>
+    <button class="btn" id="sortear">Sortear carta</button>
+      </section>
+
+  <section id="sobre" class="oculto" role="tabpanel" aria-labelledby="t-sobre">
+    <div class="sobre">
+      <h2>O que é o Aurora</h2>
+      <p>O Aurora é uma proposta educativa supervisionada. Ela reúne escuta, acolhimento e orientação sobre a rede de apoio.</p>
+      <p>A ideia valoriza os vínculos, a autonomia e o bem-estar das pessoas idosas. O projeto nasceu do convívio com os avós de três estudantes de Medicina.</p>
+    </div>
+    <div class="sobre">
+      <h2>Quem faz o Aurora</h2>
+      <p>Gabriela, Giovanna e Letícia, estudantes de Medicina do Centro de Excelência ENIAC, com orientação do Dr. Helder Ribeiro.</p>
+      <div class="equipe">
+        <figure>
+          <img src="equipe-1.jpg" alt="Foto da estudante Gabriela, integrante da equipe do Projeto Aurora">
+          <figcaption>Gabriela<br>Articulação e logística</figcaption>
+        </figure>
+        <figure>
+          <img src="equipe-2.jpg" alt="Foto da estudante Giovanna, integrante da equipe do Projeto Aurora">
+          <figcaption>Giovanna<br>Materiais e escuta</figcaption>
+        </figure>
+        <figure>
+          <img src="equipe-3.jpg" alt="Foto da estudante Letícia, integrante da equipe do Projeto Aurora">
+          <figcaption>Letícia<br>Indicadores e registros</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="sobre">
+      <h2>Como usar esta página</h2>
+      <p>Na aba <strong>Cartas</strong>, sorteie uma pergunta e conte uma história com quem está perto de você. Pode pular qualquer carta.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="logo-eniac.png" alt="Logo do Centro Universitário ENIAC, Centro Universitário de Excelência">
+  <p>Projeto Aurora · Grupo 1A · Medicina ENIAC · Guarulhos/SP</p>
+</footer>
+
+<script>
+const CARTAS = [
+  { p: "Qual brincadeira você mais gostava quando era criança?", d: "Deixe a pessoa contar sem corrigir detalhes." },
+  { p: "Qual comida da sua infância você ainda lembra o cheiro?", d: "Perguntar “como era o gosto?” ajuda a continuar a história." },
+  { p: "Qual música te faz lembrar de um tempo bom?", d: "Se houver um rádio ou celular por perto, ouçam juntos." },
+  { p: "Se pudesse visitar um lugar de que você gosta, qual seria?", d: "Pergunte também com quem iria." },
+  { p: "Quem foi a pessoa que mais te ensinou alguma coisa?", d: "Pode ser alguém da família, um professor ou um vizinho." },
+  { p: "O que você faz hoje que te deixa feliz, mesmo que seja pouco?", d: "Valorize os detalhes do dia a dia." },
+  { p: "Se a gente fosse fazer algo juntos hoje, em casa, o que seria?", d: "Anote a ideia e tentem fazer juntos." },
+  { p: "Qual foi a primeira coisa que você aprendeu a fazer sozinho?", d: "Pergunte como a pessoa se sentiu na época." }
+];
+
+const $ = id => document.getElementById(id);
+let atual = -1;
+let db = null, user = null, uid = null;
+
+// Cartas
+function sortear() {
+  let i;
+  do { i = Math.floor(Math.random() * CARTAS.length); } while (i === atual && CARTAS.length > 1);
+  atual = i;
+  $('pergunta').textContent = CARTAS[i].p;
+  $('dica').textContent = 'Dica para quem pergunta: ' + CARTAS[i].d;
+}
+$('sortear').addEventListener('click', sortear);
+
+
+
+// Abas (clique e setas do teclado)
+const ABAS = ['cartas', 'sobre'];
+function mostrarAba(nome) {
+  ABAS.forEach(s => $(s).classList.toggle('oculto', s !== nome));
+  document.querySelectorAll('nav button').forEach(b => {
+    const ativa = b.dataset.tab === nome;
+    b.setAttribute('aria-selected', String(ativa));
+    b.tabIndex = ativa ? 0 : -1;
+  });
+}
+document.querySelectorAll('nav button').forEach((b, idx, todas) => {
+  b.addEventListener('click', () => mostrarAba(b.dataset.tab));
+  b.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    const passo = e.key === 'ArrowRight' ? 1 : -1;
+    const prox = todas[(idx + passo + todas.length) % todas.length];
+    prox.focus();
+    mostrarAba(prox.dataset.tab);
+  });
+});
+
+
+
+
+
+</script>
+</body>
+</html>
